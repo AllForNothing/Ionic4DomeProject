@@ -1,17 +1,27 @@
 import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
+import { EchartsComponent } from '../../global-components/echarts/echarts.component';
+import { SharedModule } from '../shared/shared.module';
+import { EchartDemoComponent } from './echart-demo/echart-demo.component';
+
+const routes: Routes = [
+  { path: '', component: Tab2Page },
+  { path: 'echarts', component: EchartDemoComponent },
+];
 
 @NgModule({
   imports: [
     IonicModule,
-    CommonModule,
+    SharedModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: Tab2Page }])
+    RouterModule.forChild(routes)
   ],
-  declarations: [Tab2Page]
+  declarations: [
+      Tab2Page,
+    EchartDemoComponent
+  ]
 })
 export class Tab2PageModule {}
