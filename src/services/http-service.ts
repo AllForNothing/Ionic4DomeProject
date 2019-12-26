@@ -11,7 +11,7 @@ import { Observable, of, throwError } from 'rxjs';
 @Injectable({
     providedIn: 'root'
 })
-export class HttpServiceService {
+export class HttpService {
     private readonly _isNative: boolean = false;
     constructor(private angularHttp: HttpClient,
                 private nativeHttp: HTTP) {
@@ -32,8 +32,8 @@ export class HttpServiceService {
     postObservable(url: string, param?: any, headers?: HttpHeaders): Observable<any> {
         if (this._isNative) {// 判断是原生环境还是浏览器环境
             this.nativeHttp.post(url, param, headers).then(
-                respons => {
-                    return of(respons);
+                response => {
+                    return of(response);
                 }, error => {
                     return throwError(error);
                 }
