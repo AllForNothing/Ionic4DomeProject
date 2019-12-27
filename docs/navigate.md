@@ -109,7 +109,7 @@ Tab1Page 和 TabsPage也随之出现在了屏幕上
 
 （2）调用方法跳转
   在angular中，我们可以使用Router的navigate()方法，进行跳转， 在ionic中，我们仍然可以这么做，因为ion-router-outlet包含router-outlet
-  的全部功能, 但这会导致动画失效和ionic4组件特有的生命周期钩子失效。
+  的全部功能。
   哈，ionic中有NavController, 我们可以使用:
 ```typescript
    constructor(private navCtrl: NavController,
@@ -119,10 +119,16 @@ Tab1Page 和 TabsPage也随之出现在了屏幕上
         this.navCtrl.navigateForward(['./echarts'], { relativeTo: this.route });
     }
 ```
-这就达到和之前标签跳转同样的功能。更多的跳转知识，查看NavController对象了解详情
+这就达到和之前标签跳转同样的功能，更多的跳转知识，查看NavController对象了解详情。
+
+    *上面提到的使用Router对象来跳转，他对所有跳转都相当于NavController 的 navigateRoot()方法（注意：在浏览器中输入地址，或者刷新也相当于此方法），将不会有路由动画，如果页面中有ion-back-button标签，该标签将不会显示（因为栈中只有一个页面，无法返回）
+
+    *路由出口如果使用router-outlet，将会使得路由动画和组件的ionic特有的生命周期钩子失效
+
+所以， 请使用ion-router-outlet作为路由出口， 并使用NavController进行跳转。
 
 
-3.事实上，ionic4仍然保留了之前版本中的nav栈，ion-nav, 同样，自己去官网阅读了解更多。
+3.事实上，ionic4仍然保留了之前版本中的nav栈，ion-nav, 该组件已经完全和路由系统无关，但是还是可以push 和pop页面。同样，自己去官网阅读了解更多。
   
  
 
