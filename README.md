@@ -1,6 +1,7 @@
 # Ionic4DomeProject
 Ionic4 骨架， 包含常用组件 和 服务，可依此快速搭建好用的ionic4项目
 ionic4 交流QQ群：670727319
+楼主QQ: 1083433931
 
 1.Ionic4 导航/路由的正确使用方式
 [查看](./docs/navigate.md)
