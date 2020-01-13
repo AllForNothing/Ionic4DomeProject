@@ -16,7 +16,7 @@ import {
  */
 
 import * as echarts from 'echarts'; // 这里直接引入了全部，这将导致压缩包的体积增加约1.5M
-import ECharts = echarts.ECharts;
+import { ECharts } from 'echarts/lib/echarts';
 /**
  * @Description:
  * @author 孙世军

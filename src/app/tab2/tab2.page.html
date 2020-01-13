@@ -7,7 +7,15 @@
 </ion-header>
 
 <ion-content>
+  <div class="div" appDraggable>
+
+  </div>
   <ion-item routerDirection="forward" routerLink="./echarts">echarts demo</ion-item>
   <div #cornerStoneDemo></div>
   <a (click)="goToEchartsDemo()">ssss</a>
+  <ion-fab [offsetX]="0" [offsetY]="28" appDraggable vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

@@ -13,3 +13,6 @@ ionic4 交流QQ群：670727319
 
 3.Angular/ionic整合Echart
 [查看](./docs/echart.md)
+
+4.一个指令实现元素的可拖拽
+[查看](./src/directives/draggable.directive.ts)
