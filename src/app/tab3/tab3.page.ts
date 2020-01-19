@@ -9,4 +9,11 @@ export class Tab3Page {
 
   constructor() {}
 
+  showToast() {
+    if (cordova && cordova.plugins && ((cordova.plugins) as any).ToastDemo) {
+      ((cordova.plugins) as any).ToastDemo.showToast('我是toast');
+    } else {
+      console.error("浏览器环境无法运行本地插件");
+    }
+  }
 }
