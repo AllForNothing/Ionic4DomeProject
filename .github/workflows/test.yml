@@ -10,6 +10,15 @@ env:
   CI: true
 
 jobs:
+  BACK_END_UT:
+    runs-on:
+      - ubuntu-latest
+    steps:
+      - name: Codecov For Back_End
+        uses: codecov/codecov-action@v1
+        with:
+          token: 'd6e8b07c-4a52-4fec-ada4-2b4b24fcc069'
+          file: ./coverage.xml
   UI_UT:
     env:
       UI_UT: true
@@ -33,7 +42,7 @@ jobs:
       - name: Run tests
         run: npm run test
 
-      - name: Codecov
+      - name: Codecov For UI
         uses: codecov/codecov-action@v1
         with:
           token: 'd6e8b07c-4a52-4fec-ada4-2b4b24fcc069'
