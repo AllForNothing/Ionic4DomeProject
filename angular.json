@@ -38,7 +38,7 @@
               {
                 "input": "src/global.scss"
               },
-              { "input": "src/my.scss", "lazy": true }
+              { "input": "src/my.scss", "lazy": true },
             ],
             "scripts": []
           },
