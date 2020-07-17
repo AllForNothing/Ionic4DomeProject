@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { EchartsComponent } from '../../global-components/echarts/echarts.component';
 import { MultiTabsComponent } from '../../global-components/multi-tabs/multi-tabs.component';
 import { DraggableDirective } from '../../directives/draggable.directive';
+import { SignatureComponent } from '../../global-components/signature/signature.component';
+import { SignaturePadModule } from 'angular2-signaturepad';
+
+
 
 
 
@@ -10,15 +14,18 @@ import { DraggableDirective } from '../../directives/draggable.directive';
   declarations: [
       EchartsComponent,
       MultiTabsComponent,
-      DraggableDirective
+      DraggableDirective,
+    SignatureComponent,
   ],
   imports: [
-      CommonModule
+    CommonModule,
+    SignaturePadModule
   ],
   exports: [
       EchartsComponent,
       MultiTabsComponent,
-      DraggableDirective
+      DraggableDirective,
+    SignatureComponent
   ]
 })
 export class SharedModule { }
