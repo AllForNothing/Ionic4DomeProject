@@ -7,9 +7,6 @@ import { SignatureComponent } from '../../global-components/signature/signature.
 import { SignaturePadModule } from 'angular2-signaturepad';
 
 
-
-
-
 @NgModule({
   declarations: [
       EchartsComponent,
