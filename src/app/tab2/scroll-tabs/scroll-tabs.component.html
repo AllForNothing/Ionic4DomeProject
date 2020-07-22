@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="返回"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+     Scroll Tabs Demo
+    </ion-title>
+  </ion-toolbar>
+  <div #container  class="container">
+       <div class="child" id="{{'a'+i}}" [ngClass]="{active: i==activeIndex}" *ngFor="let item of tabs;let i =index" (click)="chooseTab3($event,i)">
+         <span>{{item}}</span>
+       </div>
+  </div>
+</ion-header>
+<ion-content>
+  <div slot="fixed">
+    <h1>Fixed Content</h1>
+  </div>
+</ion-content>
