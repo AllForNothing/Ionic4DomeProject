@@ -30,3 +30,6 @@ ionic4 交流QQ群：670727319
 
 5.整合一个简单好用的签名插件angular2-signaturepad
 [查看](./docs/signature.md)
+
+6.可自动居中的tabs(带动画)
+[查看](./src/app/tab2/scroll-tabs)
