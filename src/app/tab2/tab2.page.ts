@@ -1,8 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { CornerstoneServiceService } from '../../services/cornerstone-service.service';
 import { NavController } from '@ionic/angular';
 import { NavigationOptions } from '@ionic/angular/dist/providers/nav-controller';
 import { ActivatedRoute } from '@angular/router';
+import { ModalService } from "../../services/modal.service";
 
 @Component({
     selector: 'app-tab2',
@@ -12,9 +12,10 @@ import { ActivatedRoute } from '@angular/router';
 export class Tab2Page implements OnInit {
     @ViewChild('cornerStoneDemo', {static: true})
     cornerStoneDemo: ElementRef;
-    navioption: NavigationOptions
+    navioption: NavigationOptions;
     constructor(private navCtrl: NavController,
-                private route: ActivatedRoute) {
+                private route: ActivatedRoute,
+                private modalService: ModalService) {
     }
     goToEchartsDemo() {
         this.navCtrl.navigateForward(['./echarts'], { relativeTo: this.route });
@@ -30,4 +31,13 @@ export class Tab2Page implements OnInit {
         });*/
     }
 
+    showA() {
+       this.modalService.showA(new Date().getTime().toString());
+    }
+    showB() {
+       this.modalService.showB(new Date().getTime().toString());
+    }
+    closeAll() {
+       this.modalService.closeAll();
+    }
 }
